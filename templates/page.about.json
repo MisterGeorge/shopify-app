@@ -6,9 +6,38 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "77af24a7-7b53-4885-b48b-ec9fbcbb9565": {
+      "type": "about",
+      "blocks": {
+        "template--16106116284571__77af24a7-7b53-4885-b48b-ec9fbcbb9565-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h1"
+          }
+        },
+        "template--16106116284571__77af24a7-7b53-4885-b48b-ec9fbcbb9565-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--16106116284571__77af24a7-7b53-4885-b48b-ec9fbcbb9565-heading-1",
+        "template--16106116284571__77af24a7-7b53-4885-b48b-ec9fbcbb9565-text-1"
+      ],
+      "settings": {
+        "about_img": "shopify:\/\/shop_images\/team-meeting-full-of-happy-young-adults.jpg",
+        "about_title": "Heading",
+        "about_paragraph": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "77af24a7-7b53-4885-b48b-ec9fbcbb9565"
   ]
 }
