@@ -1,6 +1,7 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-option.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -166,6 +167,29 @@
                     section_id: section.id,
                     show_price: false
                   %}
+
+                   {% if product.options.size > 1 -%}
+                    {% for option in product.options_with_values -%}
+                      <div class="product-option">
+                        <span class="option-name">{{ option.name }}</span>
+                        <ul class="values">
+                          {%- for value in option.values %}
+                            <li class="value">{{ value }}</li>
+                          {%- endfor %}
+                        </ul>
+                      </div>
+                    {%- endfor %}
+                  {%- endif %}
+
+                  {%- if product.available -%}
+                    {%- for variant in product.variants -%}
+                      {%- if variant.inventory_quantity < 5 -%}
+                        <div class="product-inventory">
+                          <span>Last items</span>
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endif -%}
                 </li>
               {%- endfor -%}
             </ul>
@@ -178,6 +202,7 @@
       </div>
     </div>
   {%- endpaginate -%}
+
   {% if section.settings.image_shape == 'arch' %}
     {% render 'mask-arch' %}
   {%- endif -%}
